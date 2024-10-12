@@ -98,3 +98,4 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/go
 eval "$(zoxide init zsh)"
 alias cd="z"
+alias discord="Discord"
