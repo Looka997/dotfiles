@@ -1,15 +1,11 @@
-# i3 config file (v4)
+set $mod Mod1
 
-set $mod Mod4
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Web"
 set $ws2 "2: Terminal"
 set $ws3 "3: Discord"
-set $ws4 "4: Obsidian"
-set $ws5 "5: KeePassXC"
-set $ws6 "6: Unity"
+set $ws4 "4: KeePassXC"
+set $ws5 "5"
+set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -20,8 +16,7 @@ set $down j
 set $up k
 set $right l
 
-#font pango:monospace 8
-font pango:DejaVu Sans Mono 8
+font pango: SauceCode Pro Nerd Font 10.5
 
 # On startup
 
@@ -44,8 +39,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 assign [class="^Brave-browser$"] $ws1
 assign [class="^discord$"] $ws3
 assign [class="^KeePassXC$"] $ws5
-assign [class="^unityhub$"] $ws6
-assign [class="^Unity$"] $ws6
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -64,6 +57,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -179,28 +173,42 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# class                 border  bground text    indicator child_border
-client.focused          #83CAFA #51A2DA #FFFFFF #83CAFA   #51A2DA
-client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
-client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
-client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+#colors
+set $whitesmoke #dcd7ba
+set $purple #1f1f28
+set $black #090618
+set $red #c34043
+set $green #76946a
+set $yellow #c0a36e
+set $blue #7e9cd8
+set $magenta #957fb8
+set $cyan #6a9589
+set $white #c8c093
 
-client.background       #FFFFFF
+# class                 border  bground text        indicator child_border
+client.focused          $yellow $purple $whitesmoke #83CAFA   $yellow
+client.focused_inactive #8C8C8C #4C4C4C $white      #4C4C4C   #8C8C8C
+client.unfocused        #4C4C4C #222222 #888888     #292D2E   #222222
+client.urgent           #EC69A0 #DB3279 $white      #DB3279   #DB3279
+client.placeholder      $black #0C0C0C  $white      $black    #0C0C0C
+
+client.background       $yellow
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
   colors {
-    background #000000
-    statusline #FFFFFF
+    background $purple
+    statusline $white
     separator  #666666
 
-    focused_workspace  #83CAFA #51A2DA #FFFFFF
-    active_workspace   #3C6EB4 #294172 #FFFFFF
-    inactive_workspace #8C8C8C #4C4C4C #888888
-    urgent_workspace   #EC69A0 #DB3279 #FFFFFF
-    binding_mode       #b691d3 #A07CBC #FFFFFF
+    focused_workspace  $yellow  $magenta  $white
+    active_workspace   $cyan    $blue     $white
+    inactive_workspace #8C8C8C  #4C4C4C   #888888
+    urgent_workspace   #EC69A0  #DB3279   $white
+    binding_mode       $magenta #A07CBC   $white
   }
   status_command i3status
 }
+
+default_floating_border none
