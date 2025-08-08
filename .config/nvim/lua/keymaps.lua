@@ -15,6 +15,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = '[W]rite file' })
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 -- [[ Basic Autocommands ]]
 -- Highlight when yanking (copying) text
 --  See `:help vim.highlight.on_yank()`
