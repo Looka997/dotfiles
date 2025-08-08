@@ -1,3 +1,6 @@
+[general]
+live_config_reload = true
+
 [font]
 normal = {family = "SauceCode Pro Nerd Font", style="Regular"}
 bold = {family = "SauceCode Pro Nerd Font", style="Bold"}
