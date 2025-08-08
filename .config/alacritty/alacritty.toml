@@ -3,6 +3,7 @@ live_config_reload = true
 
 [font]
 normal = {family = "SauceCode Pro Nerd Font"}
+size = 12.5
 
 # Colors (Kanagawa Wave)
 
