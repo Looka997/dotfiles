@@ -5,4 +5,7 @@ end
 ## Variables
 set -U fish_greeting
 
+# Aliases
+alias ls="eza"
+
 zoxide init fish | source
