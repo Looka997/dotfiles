@@ -5,6 +5,9 @@ end
 ## Variables
 set -U fish_greeting
 
+## PATH
+set PATH ~/go/bin $PATH
+
 # Aliases
 alias ls="eza"
 
