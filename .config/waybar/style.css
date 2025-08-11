@@ -1,3 +1,29 @@
+
+/*
+#colors
+set $whitesmoke #dcd7ba
+set $purple #1f1f28
+set $black #090618
+set $red #c34043
+set $green #76946a
+set $yellow #c0a36e
+set $blue #7e9cd8
+set $magenta #957fb8
+set $cyan #6a9589
+set $white #c8c093
+
+background $purple
+statusline $white
+separator  #666666
+
+focused_workspace  $yellow  $magenta  $white
+active_workspace   $cyan    $blue     $white
+inactive_workspace #8C8C8C  #4C4C4C   #888888
+urgent_workspace   #EC69A0  #DB3279   $white
+binding_mode       $magenta #A07CBC   $white
+
+*/
+
 * {
     font-family: 'SauceCode Pro Nerd Font', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 13px;
@@ -281,54 +307,10 @@ label:focus {
 }
 
 
-
-
-/*
-*
-#colors
-set $whitesmoke #dcd7ba
-set $purple #1f1f28
-set $black #090618
-set $red #c34043
-set $green #76946a
-set $yellow #c0a36e
-set $blue #7e9cd8
-set $magenta #957fb8
-set $cyan #6a9589
-set $white #c8c093
-
-# class                 border  bground text        indicator child_border
-client.focused          $yellow $purple $whitesmoke #83CAFA   $yellow
-client.focused_inactive #8C8C8C #4C4C4C $white      #4C4C4C   #8C8C8C
-client.unfocused        #4C4C4C #222222 #888888     #292D2E   #222222
-client.urgent           #EC69A0 #DB3279 $white      #DB3279   #DB3279
-client.placeholder      $black #0C0C0C  $white      $black    #0C0C0C
-
-client.background       $yellow
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  colors {
-    background $purple
-    statusline $white
-    separator  #666666
-
-    focused_workspace  $yellow  $magenta  $white
-    active_workspace   $cyan    $blue     $white
-    inactive_workspace #8C8C8C  #4C4C4C   #888888
-    urgent_workspace   #EC69A0  #DB3279   $white
-    binding_mode       $magenta #A07CBC   $white
-  }
-  status_command i3status
-}
-
-*/
-
 #workspaces button {
     padding: 0 5px;
     background-color: #222222;
-    color: #888888;
+    color: #c8c093;
     border-color: #4C4C4C;
 }
 
