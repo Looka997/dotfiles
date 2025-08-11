@@ -229,6 +229,7 @@ label:focus {
 }
 
 #idle_inhibitor {
+    padding: 0 15 0 11;
 }
 
 #idle_inhibitor.activated {
